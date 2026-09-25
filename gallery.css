@@ -1,0 +1,85 @@
+/* Component styles: copy these rules with the figure. */
+.cat-book-animation { --cba-duration:8s; --cba-yarn-color:currentColor; width:100%; max-width:800px; margin:0; color:inherit; background:transparent; }
+.cat-book-animation > svg { display:block; width:100%; height:auto; overflow:hidden; }
+.cat-book-animation .cba-lines { stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+.cat-book-animation .cba-cat,.cat-book-animation .cba-head,.cat-book-animation .cba-paw,.cat-book-animation .cba-tail,.cat-book-animation .cba-bookmark,.cat-book-animation .cba-eyes,.cat-book-animation .cba-traveler,.cat-book-animation .cba-climb,.cat-book-animation .cba-yarn,.cat-book-animation .cba-roll {
+  animation-duration:var(--cba-duration); animation-iteration-count:infinite; animation-timing-function:cubic-bezier(.45,0,.3,1);
+}
+.cat-book-animation .cba-head { transform-box:fill-box; transform-origin:50% 75%; }
+.cat-book-animation .cba-eyes { transform-box:fill-box; transform-origin:center; animation-name:cba-blink; }
+.cat-book-animation .cba-tail { transform-box:fill-box; transform-origin:100% 100%; }
+.cat-book-animation.cba-stack .cba-head { animation-name:cba-look-down; }
+.cat-book-animation.cba-stack .cba-tail { animation-name:cba-stack-tail; }
+.cat-book-animation.cba-stack .cba-paw { transform-origin:244px 215px; animation-name:cba-stack-paw; }
+.cat-book-animation.cba-stack .cba-bookmark { transform-origin:305px 208px; animation-name:cba-bookmark; }
+.cat-book-animation.cba-between { --cba-duration:9s; }
+.cat-book-animation.cba-between .cba-cat { animation-name:cba-peek; }
+.cat-book-animation.cba-between .cba-head { animation-name:cba-look-around; }
+.cat-book-animation.cba-between .cba-paw { animation-name:cba-peek-paw; }
+.cat-book-animation.cba-between .cba-tail { animation-name:cba-peek-tail; }
+.cat-book-animation.cba-yarn .cba-traveler { animation-name:cba-follow; }
+.cat-book-animation.cba-yarn .cba-climb { transform-origin:170px 251px; transform:translateY(25px) rotate(-14deg); animation-name:cba-climb; }
+.cat-book-animation.cba-yarn .cba-paw { animation-name:cba-yarn-paw; }
+.cat-book-animation.cba-yarn .cba-tail { animation-name:cba-yarn-tail; }
+.cat-book-animation .cba-yarn { stroke:var(--cba-yarn-color); animation-name:cba-yarn-travel; }
+.cat-book-animation .cba-roll { transform-box:fill-box; transform-origin:center; animation-name:cba-yarn-roll; }
+/* Shared stillness lets each small gesture read on its own. */
+@keyframes cba-blink { 0%,71%,76%,100% {transform:scaleY(1)} 73% {transform:scaleY(.08)} }
+@keyframes cba-look-down { 0%,13%,86%,100% {transform:rotate(0)} 25%,67% {transform:rotate(10deg) translateY(2px)} }
+@keyframes cba-stack-tail { 0%,18%,62%,100% {transform:rotate(0)} 35% {transform:rotate(7deg)} 48% {transform:rotate(-3deg)} }
+@keyframes cba-stack-paw { 0%,35%,85%,100% {transform:rotate(0)} 49%,55% {transform:rotate(25deg)} 65% {transform:rotate(17deg)} }
+@keyframes cba-bookmark { 0%,49%,88%,100% {transform:rotate(0)} 59% {transform:rotate(-10deg)} 70% {transform:rotate(6deg)} 80% {transform:rotate(-2deg)} }
+@keyframes cba-peek { 0%,8%,96%,100% {transform:translateY(95px)} 23% {transform:translateY(47px)} 37%,77% {transform:translateY(0)} }
+@keyframes cba-look-around { 0%,36%,81%,100% {transform:rotate(0)} 45% {transform:rotate(-7deg)} 57%,67% {transform:rotate(7deg)} }
+@keyframes cba-peek-paw { 0%,43%,84%,100% {opacity:0;transform:translateY(-9px)} 51%,72% {opacity:1;transform:translateY(0)} }
+@keyframes cba-peek-tail { 0%,54%,87%,100% {opacity:0;transform:scaleY(.2)} 64%,74% {opacity:1;transform:scaleY(1)} }
+/* Travel reset happens outside the viewport, with stationary books retained. */
+@keyframes cba-follow { 0%,17% {transform:translateX(-365px)} 39%,68% {transform:translateX(0)} 94%,100% {transform:translateX(420px)} }
+@keyframes cba-climb { 0%,30%,89%,100% {transform:translateY(25px) rotate(0)} 40%,69% {transform:translateY(25px) rotate(-14deg)} 76% {transform:translateY(18px) rotate(-7deg)} }
+@keyframes cba-yarn-travel { 0% {transform:translateX(170px)} 19%,52% {transform:translateX(0)} 65%,70% {transform:translateX(35px)} 89%,100% {transform:translateX(170px)} }
+@keyframes cba-yarn-roll { 0% {transform:rotate(540deg)} 19%,52% {transform:rotate(0)} 65%,70% {transform:rotate(112deg)} 89%,100% {transform:rotate(540deg)} }
+@keyframes cba-yarn-paw { 0%,43%,75%,100% {transform:translate(0,0)} 53%,58% {transform:translate(42px,24px)} 66% {transform:translate(72px,30px)} }
+@keyframes cba-yarn-tail { 0%,42%,83%,100% {transform:rotate(0)} 58% {transform:rotate(6deg)} 70% {transform:rotate(-4deg)} }
+/* Base SVG coordinates are a visible resting pose, not an offscreen entrance. */
+@media (prefers-reduced-motion:reduce) { .cat-book-animation * {animation:none !important;} }
+
+/* Demo presentation; not required when embedding the component. */
+.cbd-page { margin:0; background:#faf9f6; color:#343b37; font-family:Arial,Helvetica,sans-serif; }
+.cbd-page * {box-sizing:border-box;}
+.cbd-page a {color:inherit;text-underline-offset:4px;}
+.cbd-page a:focus-visible,.cbd-page input:focus-visible {outline:2px solid currentColor;outline-offset:5px;}
+.cbd-wrap {max-width:1340px;margin:auto;padding:32px 5vw 24px;}
+.cbd-top {display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #343b372b;padding-bottom:24px;}
+.cbd-brand {font-size:15px;font-weight:600;text-decoration:none;letter-spacing:-.4px;display:flex;align-items:center;gap:10px;}
+.cbd-logo {width:26px;height:26px;}
+.cbd-edition,.cbd-eyebrow,.cbd-meta,.cbd-foot {font-size:10px;letter-spacing:1.5px;text-transform:uppercase;}
+.cbd-edition {opacity:.6;}
+.cbd-intro {padding:56px 0 37px;max-width:760px;}
+.cbd-eyebrow {opacity:.65;margin:0 0 22px;}
+.cbd-intro h1 {font:normal clamp(42px,5.5vw,72px)/1.05 Georgia,'Times New Roman',serif;letter-spacing:-2.5px;margin:0 0 22px;}
+.cbd-intro p:last-child {font-size:15px;line-height:1.85;max-width:530px;margin:0;opacity:.72;}
+.cbd-toolbar {display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding:16px 0;border-top:1px solid #343b372b;border-bottom:1px solid #343b372b;margin-bottom:27px;}
+.cbd-colors {display:flex;flex-wrap:wrap;gap:18px;border:0;margin:0;padding:0;}
+.cbd-colors legend {position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;}
+.cbd-toolbar label {display:inline-flex;align-items:center;gap:7px;font-size:11px;cursor:pointer;}
+.cbd-toolbar input {width:14px;height:14px;accent-color:#343b37;margin:0;}
+.cbd-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.cbd-preview {display:block;position:relative;border:1px solid #343b3726;border-radius:8px;overflow:hidden;color:#343b37;background:#f3f1eb;text-decoration:none;}
+.cbd-page:has(.cbd-light:checked) .cbd-preview {color:#fff;background:#343b37;}
+.cbd-page:has(.cbd-muted:checked) .cbd-preview {color:#657967;background:#f3f1eb;}
+.cbd-page:has(.cbd-pause:checked) .cat-book-animation * {animation-play-state:paused;}
+.cbd-number {position:absolute;top:17px;left:18px;font-size:10px;opacity:.6;}
+.cbd-arrow {position:absolute;bottom:13px;right:17px;font-size:18px;}
+.cbd-card h2 {font:normal 23px/1.25 Georgia,'Times New Roman',serif;margin:22px 0 10px;letter-spacing:-.4px;}
+.cbd-card h2 a {text-decoration:none;}
+.cbd-card p {font-size:12px;line-height:1.85;opacity:.72;margin:0 0 18px;min-height:46px;}
+.cbd-meta {display:flex;justify-content:space-between;gap:14px;font-size:9px;line-height:1.7;letter-spacing:.6px;opacity:.65;}
+.cbd-note {margin-top:48px;padding:24px 0;border-top:1px solid #343b372b;border-bottom:1px solid #343b372b;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px;line-height:1.8;}
+.cbd-note p {margin:0;opacity:.75;}
+.cbd-note code {font-size:11px;}
+.cbd-foot {margin-top:24px;display:flex;justify-content:space-between;gap:20px;font-size:9px;opacity:.55;line-height:1.7;}
+.cbd-detail {max-width:1050px;}
+.cbd-stage {display:flex;justify-content:center;}
+.cbd-stage .cat-book-animation {max-width:720px;}
+.cbd-caption {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:15px;font-size:11px;opacity:.65;line-height:1.7;}
+@media(max-width:760px) {.cbd-wrap{padding:24px}.cbd-grid{grid-template-columns:1fr;gap:35px}.cbd-intro{padding-top:40px}.cbd-edition{max-width:125px;text-align:right;line-height:1.7;font-size:8px}.cbd-card p{min-height:0}.cbd-foot,.cbd-note{flex-direction:column;align-items:flex-start}.cbd-note{margin-top:32px}.cbd-colors{gap:14px}}
