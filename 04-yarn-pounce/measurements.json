@@ -1,0 +1,179 @@
+{
+  "measuredAt": "2026-09-26T03:16:16.534Z",
+  "environment": {
+    "browser": "Chromium 153.0.0.0",
+    "platform": "Windows x64",
+    "logicalProcessors": 16,
+    "devicePixelRatio": 1,
+    "viewport": {
+      "width": 1000,
+      "height": 800
+    },
+    "componentWidth": 480,
+    "backgrounded": false
+  },
+  "weights": {
+    "figure": {
+      "rawBytes": 1827,
+      "gzip9Bytes": 901
+    },
+    "componentCSS": {
+      "rawBytes": 6415,
+      "gzip9Bytes": 1132
+    },
+    "embedCombined": {
+      "rawBytes": 8243,
+      "gzip9Bytes": 1957
+    },
+    "onceHTML": {
+      "rawBytes": 3562,
+      "gzip9Bytes": 1732
+    },
+    "loopHTML": {
+      "rawBytes": 3582,
+      "gzip9Bytes": 1740
+    },
+    "fullCSS": {
+      "rawBytes": 10177,
+      "gzip9Bytes": 2322
+    }
+  },
+  "wholeSessionCLS": 0,
+  "observations": [
+    {
+      "trial": 1,
+      "mode": "static",
+      "elapsedMs": 10002.800000071526,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 600,
+      "rafMedianMs": 16.699999999999818,
+      "rafP95Ms": 16.800000000000182,
+      "framesOver34ms": 0
+    },
+    {
+      "trial": 1,
+      "mode": "once",
+      "elapsedMs": 10005.399999976158,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 600,
+      "rafMedianMs": 16.69999999999891,
+      "rafP95Ms": 16.799999999999272,
+      "framesOver34ms": 0
+    },
+    {
+      "trial": 1,
+      "mode": "loop",
+      "elapsedMs": 10009.100000023842,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 600,
+      "rafMedianMs": 16.700000000000728,
+      "rafP95Ms": 16.799999999999272,
+      "framesOver34ms": 0
+    },
+    {
+      "trial": 2,
+      "mode": "static",
+      "elapsedMs": 10002.799999952316,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 599,
+      "rafMedianMs": 16.69999999999709,
+      "rafP95Ms": 16.799999999999272,
+      "framesOver34ms": 0
+    },
+    {
+      "trial": 2,
+      "mode": "once",
+      "elapsedMs": 10008.700000047684,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 600,
+      "rafMedianMs": 16.69999999999709,
+      "rafP95Ms": 16.80000000000291,
+      "framesOver34ms": 0
+    },
+    {
+      "trial": 2,
+      "mode": "loop",
+      "elapsedMs": 10016.100000023842,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 600,
+      "rafMedianMs": 16.69999999999709,
+      "rafP95Ms": 16.80000000000291,
+      "framesOver34ms": 0
+    },
+    {
+      "trial": 3,
+      "mode": "static",
+      "elapsedMs": 10002.800000071526,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 599,
+      "rafMedianMs": 16.69999999999709,
+      "rafP95Ms": 16.80000000000291,
+      "framesOver34ms": 0
+    },
+    {
+      "trial": 3,
+      "mode": "once",
+      "elapsedMs": 10008.700000047684,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 600,
+      "rafMedianMs": 16.69999999999709,
+      "rafP95Ms": 16.80000000000291,
+      "framesOver34ms": 0
+    },
+    {
+      "trial": 3,
+      "mode": "loop",
+      "elapsedMs": 10000.300000071526,
+      "cls": 0,
+      "longTasks": 0,
+      "longTaskMs": 0,
+      "longAnimationFrames": 0,
+      "longAnimationFrameMs": 0,
+      "blockingMs": 0,
+      "rafSamples": 600,
+      "rafMedianMs": 16.69999999999709,
+      "rafP95Ms": 16.80000000000291,
+      "framesOver34ms": 0
+    }
+  ]
+}

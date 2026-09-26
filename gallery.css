@@ -63,7 +63,7 @@
 .cbd-colors legend {position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;}
 .cbd-toolbar label {display:inline-flex;align-items:center;gap:7px;font-size:11px;cursor:pointer;}
 .cbd-toolbar input {width:14px;height:14px;accent-color:#343b37;margin:0;}
-.cbd-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.cbd-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
 .cbd-preview {display:block;position:relative;border:1px solid #343b3726;border-radius:8px;overflow:hidden;color:#343b37;background:#f3f1eb;text-decoration:none;}
 .cbd-page:has(.cbd-light:checked) .cbd-preview {color:#fff;background:#343b37;}
 .cbd-page:has(.cbd-muted:checked) .cbd-preview {color:#657967;background:#f3f1eb;}
@@ -83,3 +83,167 @@
 .cbd-stage .cat-book-animation {max-width:720px;}
 .cbd-caption {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:15px;font-size:11px;opacity:.65;line-height:1.7;}
 @media(max-width:760px) {.cbd-wrap{padding:24px}.cbd-grid{grid-template-columns:1fr;gap:35px}.cbd-intro{padding-top:40px}.cbd-edition{max-width:125px;text-align:right;line-height:1.7;font-size:8px}.cbd-card p{min-height:0}.cbd-foot,.cbd-note{flex-direction:column;align-items:flex-start}.cbd-note{margin-top:32px}.cbd-colors{gap:14px}}
+
+/* Fourth study; previous animation rules remain unchanged. */
+/* Reusable component. Base coordinates and reduced motion share the final pose. */
+.cat-book-animation.cba-pounce {
+  width: 100%; max-width: 800px; margin: 0;
+  color: inherit; background: transparent;
+}
+.cat-book-animation.cba-pounce > svg {
+  display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; overflow: hidden;
+}
+.cat-book-animation.cba-pounce .cba-lines {
+  stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.cat-book-animation.cba-pounce .cba-pounce-cycle { opacity: 1; }
+.cat-book-animation.cba-pounce .cba-pounce-head,
+.cat-book-animation.cba-pounce .cba-pounce-tail,
+.cat-book-animation.cba-pounce .cba-pounce-eyes,
+.cat-book-animation.cba-pounce .cba-pounce-roll { transform-box: fill-box; }
+.cat-book-animation.cba-pounce .cba-pounce-head { transform-origin: 50% 75%; }
+.cat-book-animation.cba-pounce .cba-pounce-tail { transform-origin: 100% 100%; }
+.cat-book-animation.cba-pounce .cba-pounce-eyes,
+.cat-book-animation.cba-pounce .cba-pounce-roll { transform-origin: center; }
+/* Both variants perform the same 4.8-second action. Loop adds a hold and fade. */
+.cat-book-animation.cba-pounce .cba-pounce-cat {
+  animation: cba-pounce-cat 4.8s cubic-bezier(.45, 0, .3, 1) 1 both;
+}
+.cat-book-animation.cba-pounce .cba-pounce-yarn {
+  animation: cba-pounce-yarn 4.8s cubic-bezier(.45, 0, .3, 1) 1 both;
+}
+.cat-book-animation.cba-pounce .cba-pounce-roll {
+  animation: cba-pounce-roll 4.8s cubic-bezier(.45, 0, .3, 1) 1 both;
+}
+.cat-book-animation.cba-pounce .cba-pounce-paw {
+  animation: cba-pounce-paw 4.8s cubic-bezier(.45, 0, .3, 1) 1 both;
+}
+.cat-book-animation.cba-pounce .cba-pounce-head {
+  animation: cba-pounce-head 4.8s cubic-bezier(.45, 0, .3, 1) 1 both;
+}
+.cat-book-animation.cba-pounce .cba-pounce-tail {
+  animation: cba-pounce-tail 4.8s cubic-bezier(.45, 0, .3, 1) 1 both;
+}
+.cat-book-animation.cba-pounce .cba-pounce-eyes {
+  animation: cba-pounce-eyes 4.8s cubic-bezier(.45, 0, .3, 1) 1 both;
+}
+.cat-book-animation.cba-pounce--loop .cba-pounce-cat {
+  animation-name: cba-pounce-cat-loop; animation-duration: 7.2s; animation-iteration-count: infinite;
+}
+.cat-book-animation.cba-pounce--loop .cba-pounce-yarn {
+  animation-name: cba-pounce-yarn-loop; animation-duration: 7.2s; animation-iteration-count: infinite;
+}
+.cat-book-animation.cba-pounce--loop .cba-pounce-roll {
+  animation-name: cba-pounce-roll-loop; animation-duration: 7.2s; animation-iteration-count: infinite;
+}
+.cat-book-animation.cba-pounce--loop .cba-pounce-paw {
+  animation-name: cba-pounce-paw-loop; animation-duration: 7.2s; animation-iteration-count: infinite;
+}
+.cat-book-animation.cba-pounce--loop .cba-pounce-head {
+  animation-name: cba-pounce-head-loop; animation-duration: 7.2s; animation-iteration-count: infinite;
+}
+.cat-book-animation.cba-pounce--loop .cba-pounce-tail {
+  animation-name: cba-pounce-tail-loop; animation-duration: 7.2s; animation-iteration-count: infinite;
+}
+.cat-book-animation.cba-pounce--loop .cba-pounce-eyes {
+  animation-name: cba-pounce-eyes-loop; animation-duration: 7.2s; animation-iteration-count: infinite;
+}
+.cat-book-animation.cba-pounce--loop .cba-pounce-cycle {
+  animation: cba-pounce-cycle 7.2s ease-in-out infinite both;
+}
+@keyframes cba-pounce-cat {
+  0%, 28% { transform: translate(-365px, 0); }
+  42% { transform: translate(-80px, -30px); }
+  52% { transform: translate(0, 2px); }
+  58%, 100% { transform: translate(0, 0); }
+}
+@keyframes cba-pounce-cat-loop {
+  0%, 18.66667% { transform: translate(-365px, 0); }
+  28% { transform: translate(-80px, -30px); }
+  34.66667% { transform: translate(0, 2px); }
+  38.66667%, 66.66667% { transform: translate(0, 0); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes cba-pounce-yarn {
+  0% { transform: translateX(210px); }
+  18%, 60% { transform: translateX(20px); }
+  69%, 74% { transform: translateX(44px); }
+  88%, 100% { transform: translateX(0); }
+}
+@keyframes cba-pounce-yarn-loop {
+  0% { transform: translateX(210px); }
+  12%, 40% { transform: translateX(20px); }
+  46%, 49.33333% { transform: translateX(44px); }
+  58.66667%, 66.66667% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+@keyframes cba-pounce-roll {
+  0% { transform: rotate(668deg); }
+  18%, 60% { transform: rotate(64deg); }
+  69%, 74% { transform: rotate(140deg); }
+  88%, 100% { transform: rotate(0); }
+}
+@keyframes cba-pounce-roll-loop {
+  0% { transform: rotate(668deg); }
+  12%, 40% { transform: rotate(64deg); }
+  46%, 49.33333% { transform: rotate(140deg); }
+  58.66667%, 66.66667% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+@keyframes cba-pounce-paw {
+  0%, 53% { transform: translate(0, 0); }
+  60% { transform: translate(22px, 5px); }
+  68% { transform: translate(8px, 0); }
+  74% { transform: translate(35px, 7px); }
+  88%, 100% { transform: translate(0, 0); }
+}
+@keyframes cba-pounce-paw-loop {
+  0%, 35.33333% { transform: translate(0, 0); }
+  40% { transform: translate(22px, 5px); }
+  45.33333% { transform: translate(8px, 0); }
+  49.33333% { transform: translate(35px, 7px); }
+  58.66667%, 66.66667% { transform: translate(0, 0); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes cba-pounce-head {
+  0%, 49% { transform: rotate(0); }
+  58%, 74% { transform: rotate(7deg); }
+  88%, 100% { transform: rotate(0); }
+}
+@keyframes cba-pounce-head-loop {
+  0%, 32.66667% { transform: rotate(0); }
+  38.66667%, 49.33333% { transform: rotate(7deg); }
+  58.66667%, 66.66667% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+@keyframes cba-pounce-tail {
+  0%, 60% { transform: rotate(0); }
+  70% { transform: rotate(7deg); }
+  79% { transform: rotate(-3deg); }
+  90%, 100% { transform: rotate(0); }
+}
+@keyframes cba-pounce-tail-loop {
+  0%, 40% { transform: rotate(0); }
+  46.66667% { transform: rotate(7deg); }
+  52.66667% { transform: rotate(-3deg); }
+  60%, 66.66667% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+@keyframes cba-pounce-eyes {
+  0%, 79% { transform: scaleY(1); }
+  81% { transform: scaleY(.08); }
+  84%, 100% { transform: scaleY(1); }
+}
+@keyframes cba-pounce-eyes-loop {
+  0%, 52.66667% { transform: scaleY(1); }
+  54% { transform: scaleY(.08); }
+  56%, 66.66667% { transform: scaleY(1); }
+  100% { transform: scaleY(1); }
+}
+@keyframes cba-pounce-cycle {
+  0%, 84% { opacity: 1; }
+  94%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cat-book-animation.cba-pounce * { animation: none !important; }
+}
